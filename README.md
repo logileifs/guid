@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/logileifs/guid.svg?branch=master)](https://travis-ci.org/logileifs/guid)
+
 # guid
 Human friendly GUID/UUID library
 
