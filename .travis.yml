@@ -11,8 +11,8 @@ python:
   - "3.7-dev"  # 3.7 development branch
   - "nightly"
 # command to install dependencies
-install:
-  - make install
+#install:
+#  - make install
 # command to run tests
 script:
   - python -m unittest tests/*
