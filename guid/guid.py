@@ -5,31 +5,29 @@ from base64 import urlsafe_b64encode
 
 
 def uuid_to_slug(uuid):
-    return urlsafe_b64encode(uuid.bytes).rstrip(b'=').decode('ascii')
+    return urlsafe_b64encode(uuid.bytes).rstrip(b'=').decode()
 
 
 def slug_to_uuid(slug):
     return UUID(bytes=urlsafe_b64decode(slug + '=='))
 
 
+def guid_to_uuid(guid):
+    return slug_to_uuid(guid.slug)
+
+
 class GUID():
     def __init__(self):
-        self._uuid = uuid4()
-        self._slug = uuid_to_slug(self._uuid)
-
-    @property
-    def uuid(self):
-        return str(self._uuid)
-
-    @property
-    def slug(self):
-        return self._slug
+        self.slug = uuid_to_slug(uuid4())
 
     def to_uuid(self):
-        return self._uuid
+        return guid_to_uuid(self)
 
     def __repr__(self):
-        return "{'uuid': '%s', 'slug': '%s'}" % (self._uuid, self._slug)
+        return self.slug
 
     def __str__(self):
-        return self._slug
+        return self.slug
+
+    def __json__(self):
+        return self.slug
