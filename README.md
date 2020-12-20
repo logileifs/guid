@@ -10,8 +10,18 @@ Human friendly GUID/UUID library
 ```python
 >>> from guid import GUID
 >>> guid = GUID()
->>> guid.uuid
-'d95b880b-fcec-47fb-bcc4-d49f71415cf8'
->>> guid.slug
-'2VuIC_zsR_u8xNSfcUFc-A'
+>>> guid
+'Kj2hvuO5Ra-VU5ghIJVnlQ'
+>>> from guid import guid_to_uuid
+>>> guid_to_uuid(guid)
+UUID('2a3da1be-e3b9-45af-9553-982120956795')
+>>> from guid import uuid_to_guid
+>>> from uuid import uuid4
+>>> u = uuid4()
+>>> u
+UUID('929f9121-8264-472a-a4ee-ff7557457f12')
+>>> uuid_to_guid(u)
+'kp-RIYJkRyqk7v91V0V_Eg'
+>>> guid_to_uuid('kp-RIYJkRyqk7v91V0V_Eg')
+UUID('929f9121-8264-472a-a4ee-ff7557457f12')
 ```

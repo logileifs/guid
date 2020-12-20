@@ -1,0 +1,15 @@
+recipes:
+  test:
+    vars: {}
+    steps:
+      - python -m unittest discover -v -s tests -p "*test*.py"
+
+  build:
+    vars: {}
+    steps:
+      - poetry build
+
+  publish:
+    vars: {}
+    steps:
+      - poetry publish
