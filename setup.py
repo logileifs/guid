@@ -14,7 +14,7 @@ setup(
 	#	]
 	#},
 	keywords='guid uuid python',
-	version='0.1.0',
+	version='0.2.0',
 	description="Human friendly GUID/UUID library",
 	long_description="Human friendly GUID/UUID library",
 	author='Logi Leifsson',
